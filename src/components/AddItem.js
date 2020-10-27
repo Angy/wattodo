@@ -1,14 +1,17 @@
-import React, { useState } from 'react'
+import React, { Component } from 'react';
 
 
-function AddItem() {
-    const [item, setItem] = useState('')
-
-    return (
-        <div>
-            <h1>ting</h1>
-        </div>
-    )
+class AddItem extends Component {
+    render(){
+        return (
+            <div>
+                <form method="post">
+                    <input type="text" placeholder="Enter Item" name="add"/>
+                    <button type="submit">Add</button>
+                </form>
+            </div>
+        )
+    };
 
 }
 
