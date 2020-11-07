@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button'
 import ListItem from "./ListItem";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
+import { faPlusCircle, faMinusCircle } from '@fortawesome/free-solid-svg-icons'
 
 
 class AddItem extends Component {
@@ -32,9 +32,15 @@ class AddItem extends Component {
     render(){
         let items = this.state.item_list.map((val, key)=>{
             return (
-                <ListItem key={key}
-                          text={val}
-                          deleteMethod={()=>this.deleteItem(key)}/>
+                <ul>
+                    <li><FontAwesomeIcon icon={faMinusCircle}/></li>
+                    <li><ListItem
+                        key={key}
+                        text={val}
+                        deleteMethod={()=>this.deleteItem(key)}/></li>
+                    <li><FontAwesomeIcon icon={faPlusCircle}/></li>
+                </ul>
+
             )
             }
         );
@@ -48,7 +54,7 @@ class AddItem extends Component {
                     />
                     <button type="submit" onClick={this.addItem.bind(this)}><FontAwesomeIcon icon={faPlusCircle}/></button>
                 </div>
-
+                {items}
 
             </div>
 
