@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import Button from 'react-bootstrap/Button'
 import ListItem from "./ListItem";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 
 
 class AddItem extends Component {
@@ -9,7 +12,7 @@ class AddItem extends Component {
             'item': '',
             'item_list': []
         }
-        
+
 
     }
     updateItem(item){
@@ -36,15 +39,19 @@ class AddItem extends Component {
             }
         );
         return (
-            <div className="container">
-                {items}
+            <div className="form-container">
+                <div className="input-group">
                     <input type="text"
                            placeholder="Enter Item"
                            name="add"
                            onChange={item=>this.updateItem(item)}
                     />
-                    <button type="submit" onClick={this.addItem.bind(this)}>Add</button>
+                    <button type="submit" onClick={this.addItem.bind(this)}><FontAwesomeIcon icon={faPlusCircle}/></button>
+                </div>
+
+
             </div>
+
         )
     };
 
