@@ -51,6 +51,7 @@ input{
   display: inline;
 }
 .item-container{
+  text-align: center;
   width: 41%;
   margin: auto;
   padding: 10px;
