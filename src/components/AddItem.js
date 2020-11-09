@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button'
 import ListItem from "./ListItem";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlusCircle, faMinusCircle } from '@fortawesome/free-solid-svg-icons'
+import { faPlusCircle, faMinusCircle, faCheck } from '@fortawesome/free-solid-svg-icons'
 
 
 class AddItem extends Component {
@@ -33,18 +33,18 @@ class AddItem extends Component {
         let items = this.state.item_list.map((val, key)=>{
             return (
                 <ul>
-                    <li><FontAwesomeIcon icon={faMinusCircle}/></li>
+                    <li> <FontAwesomeIcon icon={faMinusCircle} className="minus" onClick={item=>this.deleteItem(item)}/></li>
                     <li><ListItem
                         key={key}
-                        text={val}
-                        deleteMethod={()=>this.deleteItem(key)}/></li>
-                    <li><FontAwesomeIcon icon={faPlusCircle}/></li>
+                        text={val}/></li>
+                    <li> <FontAwesomeIcon icon={faCheck} className="check" onClick={item=>this.deleteItem(item)}/> </li>
                 </ul>
 
             )
             }
         );
         return (
+            <>
             <div className="form-container">
                 <div className="input-group">
                     <input type="text"
@@ -52,13 +52,17 @@ class AddItem extends Component {
                            name="add"
                            onChange={item=>this.updateItem(item)}
                     />
-                    <button type="submit" onClick={this.addItem.bind(this)}><FontAwesomeIcon icon={faPlusCircle}/></button>
+                    <FontAwesomeIcon icon={faPlusCircle} className="plus" onClick={this.addItem.bind(this)}/>
                 </div>
-                {items}
-
             </div>
+            <hr/>
+            <div className="item-container">
+                {items}
+            </div>
+            </>
 
-        )
+
+    )
     };
 
 }

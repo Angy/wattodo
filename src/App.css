@@ -1,6 +1,4 @@
-.App {
-  text-align: center;
-}
+
 
 .App-logo {
   height: 40vmin;
@@ -37,29 +35,55 @@ h1{
 
 }
 input{
+  margin-left: 25% !important;
+  margin-right: 3%;
   border-radius: 25px;
   border: 1px solid #12D5EF;
   text-align: center;
-}
-button{
-  background-color: transparent;
-  border: none;
+  width: 50%;
+  outline: none;
 }
 
 .form-container{
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 60%);
+  margin: auto;
+  width: 41%;
+  padding: 10px;
+  display: inline;
 }
-.svg-inline--fa.fa-w-16{
-  color: #12D5EF;
+.item-container{
+  width: 41%;
+  margin: auto;
+  padding: 10px;
+  display: inline;
 }
+.svg-inline--fa.fa-w-16 {
+  width: 1.5em;
+}
+.plus{
+   color: #12D5EF;
+   height: auto;
+   margin-left: 1.5em;
+}
+
+.check{
+  text-shadow: 10px 10px 10px blue;
+  color: #21D636;
+  height: auto;
+}
+
+.minus{
+  text-shadow: 10px 10px 10px blue;
+  color: #B74949;
+  margin-left: 1.5em;
+  height: auto;
+
+}
+
 ul > li {
   display: inline-block;
-  /* You can also add some margins here to make it look prettier */
   zoom:1;
   *display:inline;
-  /* this fix is needed for IE7- */
+  padding: 7px;
 }
 @keyframes App-logo-spin {
   from {
